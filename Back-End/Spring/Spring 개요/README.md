@@ -85,8 +85,6 @@
     - DL방식
       - 객체가 필요로 하는 의존성을 검색(lookup)하여 가져옴
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/890a9e69-6faa-4631-9803-c2c160f9f4bb/e6770023-5ca0-48aa-9dd2-d6610c765fd9/Untitled.png)
-
 > Setter Injection이 많이 사용되긴하지만 공식 권장사양은 Constructor Injection 방식!
 
 > 의존성(Dependency)은 객체 간의 관계를 나타냄,
@@ -113,13 +111,6 @@
     - 컨테이너가 관리하는 객체를 Bean이라 하며
     - 이 빈들의 생명주기를 관리하는 의미로 빈팩토리라 함
     - BeanFactory에 여러 기능을 추가한것이 ApplicationContext
-
-Spring Test
-
-https://mvnrepository.com/
-
-- spring 검색 → spring context → 5.3.27 가져와 프로젝트에 붙이기
-- (JDK1.8은 6버전 지원X)
 
 ### IoC개념 이해하기
 
