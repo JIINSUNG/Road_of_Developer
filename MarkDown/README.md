@@ -427,12 +427,12 @@ case 5 :
 
 ```
 [![사진없을때 대체글자](사진URL)](링크)
-[![사진이없나요?](http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg)]("http://www.naver.com")
+[![사진이없나요?](http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg)](http://www.naver.com)
 ```
 
 #### output
 
-[![사진이없나요?](http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg)]("http://www.naver.com")
+[![사진이없나요?](http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg)](http://www.naver.com)
 
 ---
 
