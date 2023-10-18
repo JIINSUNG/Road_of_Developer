@@ -410,10 +410,15 @@ case 5 :
 #### output
 
 - 사진1
+
   ![사진없을때 대체문장](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+
 - 사진2
+
   ![사진2](http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg)
+
 - 사진3 (태그방식)
+
   <img src="http://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg" width ="400" height ="400"/>
 
 ---
