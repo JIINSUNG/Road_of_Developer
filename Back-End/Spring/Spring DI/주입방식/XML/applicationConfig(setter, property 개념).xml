@@ -4,17 +4,16 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
 	<!--
 		setter 메서드를 통해 주입
 		- 기본 생성자로 객체가 생성된다.
-		- <bean> 태그의 바디에 <property> 태그를 통해 setter 메서드를 호출해서 객체를 주입한다. 
-		- <property> 태그 하나가 setter 메서드 하나. 
-			value or ref 중 하나의 속성 선택
-			value : primitive or String 타입의 값 설정
-			ref   : 이미 등록된 Bean(Reference Type)을 주입
-				 	id 또는 name을 설정한다. 
-			name : 속성 이름   
+		- 네임스페이스 p를 통해서 setter 호출 
+		- List, 배열, Map, Set... 은 주입 할 수 없다. 
+		- 형식] <bean p : 속성명='값' | p: 속성명-ref='bean id' />
 	 -->
+
+
 	 
 	 <bean id='title' class='java.lang.String'>
 	 	<constructor-arg value='처음하는 spring....' />
