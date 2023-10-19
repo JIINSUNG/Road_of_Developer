@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 객체 생성  -->
+	
+	<bean id="kor" class="com.ssafy.hello.di4.xml.HelloMessageKor"></bean> <!-- id : 유일해야 -->
+	<!-- <bean id="kor" class="com.ssafy.hello.di4.xml.HelloMessageKor" scope="prototype"></bean> -->
+	<!-- scope="prototype" 해두면 싱글톤이 아닌 새로운 객체 리턴해줌, 디폴트는 싱글톤  -->
+	
+	<bean id="eng" class="com.ssafy.hello.di4.xml.HelloMessageEng"></bean> <!-- new HelloMessageEng()와 같음 -->
+
+</beans>

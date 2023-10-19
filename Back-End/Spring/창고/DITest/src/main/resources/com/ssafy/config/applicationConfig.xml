@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+		생성자 지정해서 객체 생성하기 
+		- <bean> 태그 바디에 <constructor-arg/> 태그 지정을 통해 생성자를 지정 가능. 
+		- <constructor-arg/> 태그 하나가 인자 하나를 표현 
+		- 형식] 
+			<bean>
+				<constructor-arg/>  <- 인자 개수만큼 설정  
+				....
+			</bean>
+		- <constructor-arg/>
+			value or ref 중 하나의 속성 선택
+			value : primitive or String 타입의 값 설정
+			ref   : 이미 등록된 Bean(Reference Type)을 주입
+				 	id 또는 name을 설정한다. 
+			index
+				- 인자의 순서를 설정 
+				- 생략하면 constructor-arg가 순서대로 인자에 매핑된다.
+			type
+				- 인자의 타입을 지정  
+			
+	 -->
+	 <bean id='title' class='java.lang.String'>
+	 	<constructor-arg value='처음하는 spring....' />
+	 </bean>
+
+	 <bean id='board' class="com.ssafy.board.vo.Board">
+	 	<constructor-arg value='ssafy' />
+	 	<constructor-arg ref='title' />
+	 	<constructor-arg value='건강하십니까~' />
+	 </bean>
+	 
+	 <bean id='bf1' class="com.ssafy.board.vo.BoardFile" >
+	 	<constructor-arg value='a.txt'/>
+	 	<constructor-arg value='a.txt'/>
+	 </bean>
+	 
+	 <bean id='bf2' class="com.ssafy.board.vo.BoardFile" >
+	 	<constructor-arg value='b.txt'/>
+	 	<constructor-arg value='b.txt'/>
+	 </bean>
+
+	<!--  
+	
+		  Collection, 배열, Set, Properties... 를 주입할 때는 
+		  <constructor-arg>, <property> 태그의 바디를 통해 데이터를 셋팅 후 주입할 수 있다. 
+		  
+	 -->
+	 <bean id='board2' class="com.ssafy.board.vo.Board">
+	 	<constructor-arg value = "1" />
+	 	<constructor-arg value = "ssafy" />
+	 	<constructor-arg ref = "title" />
+	 	<constructor-arg value = "2023-10-18" />
+	 	<constructor-arg value = "Winter is comming" />
+	 	<constructor-arg>
+	 		<list>
+	 			<ref bean='bf1' />
+	 			<ref bean='bf2' />
+	 		</list>
+	 	</constructor-arg>
+	 </bean>
+</beans>
