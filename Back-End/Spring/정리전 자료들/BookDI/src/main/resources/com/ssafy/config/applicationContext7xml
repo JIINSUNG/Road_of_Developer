@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"
+		default-autowire="byType"
+		>
+		<!-- default-autowire 
+			 - bean configuration(xml)에서 기본적으로 사용할 autowire 방식을 지정. 
+		-->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/ssafydb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"/>
+		<property name="username" value="ssafy"/>
+		<property name="password" value="ssafy"/>
+	</bean> 
+
+	<bean id='dbutil' 	class='com.ssafy.book.util.DBUtil' />
+	<!-- 
+		autowire
+		 - 의존 관계를 자동적으로 주입시켜줌 
+		 byType : 속성의 타입과 동일한 타입으로 등록된 bean을 자동 주입 
+		 		주의) 동일한 타입의 객체가 2개이상 등록돼 있는 경우 error 발생 
+		 constructor : 생성자의 인자 타입과 동일한 타입으로 등로된 bean을 자동 주입 
+		 byName : 속성의 이름과 bean 이름(id or name)과 동일한 bean을 자동 주입.  
+	 -->
+	<bean id='bookDao' class="com.ssafy.book.model.dao.BookDaoImpl" 			 />
+	<bean id='bookService' class="com.ssafy.book.model.service.BookServiceImpl"  />
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
