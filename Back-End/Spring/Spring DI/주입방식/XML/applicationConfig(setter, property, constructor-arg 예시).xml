@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+		setter 메서드를 통해 주입
+		- 기본 생성자로 객체가 생성된다.
+		- <bean> 태그의 바디에 <property> 태그를 통해 setter 메서드를 호출해서 객체를 주입한다. 
+		- <property> 태그 하나가 setter 메서드 하나. 
+			value or ref 중 하나의 속성 선택
+			value : primitive or String 타입의 값 설정
+			ref   : 이미 등록된 Bean(Reference Type)을 주입
+				 	id 또는 name을 설정한다. 
+			name : 속성 이름   
+	 -->
+	 
+	 <bean id='title' class='java.lang.String'>
+	 	<constructor-arg value='처음하는 spring....' />
+	 </bean>
+
+	 <bean id='board' class="com.ssafy.board.vo.Board">
+	 	<property name="id" value = 'ssafy' />
+	 	<property name="title" ref= 'title' />
+	 </bean>
+	 
+	 <bean id='bf1' class="com.ssafy.board.vo.BoardFile" >
+	 	<constructor-arg value='a.txt'/>
+	 	<constructor-arg value='a.txt'/>
+	 </bean>
+	 
+	 <bean id='bf2' class="com.ssafy.board.vo.BoardFile" >
+	 	<constructor-arg value='b.txt'/>
+	 	<constructor-arg value='b.txt'/>
+	 </bean>
+
+	<!--  
+	
+		  Collection, 배열, Set, Properties... 를 주입할 때는 
+		  <constructor-arg>, <property> 태그의 바디를 통해 데이터를 셋팅 후 주입할 수 있다. 
+		  
+	 -->
+	 <bean id='board2' class="com.ssafy.board.vo.Board">
+	 	<property name="id" value="ssafy"></property>
+	 	<property name="files">
+	 		<list>
+	 			<ref bean='bf1' />
+	 			<ref bean='bf2' />
+	 		</list>
+	 	</property>
+	 </bean>
+</beans>

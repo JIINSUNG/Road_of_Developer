@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/ssafydb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8" />
+		<property name="username" value="ssafy" />
+		<property name="password" value="ssafy" />
+	</bean>
+
+	<bean id='dbutil' class='com.ssafy.book.util.DBUtil' />
+
+	<bean id='bookDao' class="com.ssafy.book.model.dao.BookDaoImpl">
+		<constructor-arg ref='dataSource' />
+		<constructor-arg ref='dbutil' />
+	</bean>
+
+	<bean id='bookService'
+		class="com.ssafy.book.model.service.BookServiceImpl">
+		<constructor-arg ref='bookDao' />
+	</bean>
+
+	<!-- Aspect를 빈으로 등록하기 -->
+	<bean id="HelloAop" class="com.ssafy.book.aop.HelloAop" />
+
+	<!-- AoP 설정 1. aop 네임스페이스 추가 2. <aop:config> 태그를 통해 aop 설정 -->
+	<aop:config>
+		<!-- aop:pointcut 태그로 pointcut를 설정하면 여러 Aspect에서 재사용 가능 -->
+		<aop:pointcut
+			expression="execution(* com.ssafy.book.model.service.*ServiceImpl.search*(..))"
+			id="searchPC" />
+		<aop:aspect ref='HelloAop'>
+			<!-- <aop:before method="hello" pointcut-ref ="searchPC" /> -->
+			<!-- <aop:around method="hello" pointcut-ref ="searchPC" /> -->
+			<aop:before method="before" pointcut-ref="searchPC" />
+			<aop:before method="hello" pointcut-ref="searchPC" />
+			<!-- 같은 시점에 여러개의 aop가 적용된 경우 먼저 작성한 순서로 실행 -->
+			<aop:after method="after" pointcut-ref="searchPC" />
+			<aop:after-returning method="afterReturning"
+				pointcut-ref="searchPC" returning="result" />
+			<aop:after-throwing method="afterThrowing"
+				pointcut-ref="searchPC" throwing="t" />
+			<aop:around method="around" pointcut-ref="searchPC" />
+		</aop:aspect>
+	</aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
