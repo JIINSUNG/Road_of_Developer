@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<!-- 일반 Bean Configuration -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
+		<!--  웹을 위한 bean Configuration -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+     <!--  
+     /*과 / 는 다르다! 
+     
+     /*  =>  context 로 들어오는 모든 요청을 처리 
+     /   =>  context 로 들어오는 요청 중에서 자세한 매핑으로 연결되는 것 뺀 모든 요청을 처리 
+     -->
+     
+	<!-- 
+	DispatcherServlet이 기본적으로 대부분 처리
+		/hello => 핸들러 맵퍼에 의해 controller가 처리  
+		/~.jsp => ViewResolver에 의해 처리
+		/~.html => ViewResolver에 의해 처리
+		
+		나머지들은?? =>  DispatcherServlet에서 resource 설정을 해줘야함
+				  =>  webApp - resources에서 설정 
+		/~.css 
+		/~.이미지 
+		/기타파일들 
+	 -->
+
+<!-- POST 방식의 한글 처리. -->
+	 <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+          <param-name>encoding</param-name>
+          <param-value>UTF-8</param-value>
+        </init-param>
+     </filter>
+     
+     <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+     </filter-mapping>
+     
+
+     
+</web-app>
