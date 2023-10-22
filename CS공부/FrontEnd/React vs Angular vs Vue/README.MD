@@ -36,7 +36,7 @@
 - 셋다 웹 애플리케이션 개발을 위한 JavaScript 프론트엔드 프레임워크 (라이브러리)
 - 일반적으로 점유율은 React가, 접근성은 Vue가 좋다고 한다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/890a9e69-6faa-4631-9803-c2c160f9f4bb/04e27c96-4028-42fe-821e-5b10857192ff/Untitled.png)
+![Untitled](./Untitled.png)
 
 ### React
 
