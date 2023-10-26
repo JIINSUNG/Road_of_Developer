@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 Dao의 패키지명을 포한한 인터페이스 명과 동일하게 선언해야 mybatis-spring이 Dao에 대한 
+	구현체를 자동으로 생성한다. -->
+<mapper namespace="com.ssafy.test.emp.model.dao.EmployeeDao">
+	<select id="search" parameterType="int" resultType="Employee">
+		select empno,
+		name, email, hire_date as hireDate, salary, job, deptno
+		from emps
+		where
+		empno = #{empno}
+	</select>
+
+	<!-- 자주 사용하는 쿼리를 등록해서 필요한 곳에서 include해서 재사용할 수 있다. -->
+	<sql id='searchCon'>
+			<if test=" word!=null and word!='' ">
+				<choose>
+					<when test="key == 'empno'">
+						empno = #{word}
+					</when>
+					<when test="key == 'name'">
+						name like concat('%', #{word}, '%') 
+					</when>
+					<when test="key == 'salary'">
+						salary >= #{word}
+					</when>
+					<when test="key =='deptno'">
+						deptno = #{word}
+					</when>
+				</choose>
+			</if>
+	</sql>
+	<select id="searchAll" parameterType="PageBean"
+		resultType="Employee">
+		select empno, name, email, hire_date as hireDate
+		from emps
+		<where> <!-- 조건이 있을때만 where가 자동으로 붙는다. -->
+			<include refid="searchCon"></include>
+		</where>
+		limit #{start}, #{interval}
+	</select>
+
+	<select id="totalCount" parameterType="PageBean"
+		resultType="int">
+		select count(*)
+		from emps
+		<where>
+				<include refid="searchCon"></include>
+		
+		</where>
+		
+	</select>
+
+	<insert id="regist" parameterType="Employee">
+		insert into emps (empno, name,
+		email, hire_date, salary, job, deptno)
+		values
+		(#{empno},#{name},#{email},#{hireDate},#{salary},#{job},#{deptno})
+	</insert>
+
+	<update id="update" parameterType="Employee">
+		update emps set name=#{name},
+		email=#{email}, hire_date=#{hireDate}, salary = #{salary}, job=#{job},
+		deptno=#{deptno}
+		where empno=#{empno}
+	</update>
+	<delete id="remove" parameterType="int">
+		delete from emps
+		where empno=#{empno}
+	</delete>
+</mapper>    
