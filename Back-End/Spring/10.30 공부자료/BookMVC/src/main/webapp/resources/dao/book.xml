@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace는 Dao의  패키지명을 포한한 인터페이스 명과 동일하게 선언해야
+	  mybatis-spring이  Dao에 대한 구현체를 자동으로 생성한다. 
+-->    
+<mapper		namespace="com.ssafy.bookproject.book.model.dao.BookDao">
+	
+	<select id="searchAll"	parameterType="PageBean"	resultType="Book">
+		select * 
+		from 	book
+		order by isbn 
+	</select>
+	<select id="totalCount"	parameterType="PageBean"	resultType="int">
+		select count(*) 
+		from 	book
+	</select>
+	<select id="search"		parameterType="String"		resultType="Book">
+		select * 
+		from 	book
+		where   isbn = #{isbn}
+	</select>
+	
+	<insert id="insert"		parameterType="Book">
+		insert into book(isbn, title, author, price, describ) 
+		values(#{isbn},#{title},#{author},#{price},#{describ})
+	</insert>
+	
+	<update id="update"		parameterType="Book">
+		update book set  title=#{title}, author = #{author} 
+						 , price = #{price}, describ = #{describ}
+		where isbn = #{isbn}
+	</update>
+	
+	<delete id="remove"		parameterType="String">
+		delete from book 
+		where isbn = #{isbn}
+	</delete> 
+	
+</mapper>    

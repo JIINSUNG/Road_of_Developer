@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="4" failures="0" name="com.ssafy.bookproject.MemberDaoTest" time="0.325" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Zulu\zulu-8\jre\bin"/>
+    <property name="java.vm.version" value="25.192-b01"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\SSAFY\work-web\BookMVC"/>
+    <property name="java.vendor.url" value="http://www.azulsystems.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="KR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\SSAFY\work-web\BookMVC"/>
+    <property name="java.runtime.version" value="1.8.0_192-b01"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Zulu\zulu-8\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\SSAFY\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\SSAFY\work-web\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5793643124586669817.tmp"/>
+    <property name="jansi.force" value="true"/>
+    <property name="sun.jnu.encoding" value="MS949"/>
+    <property name="java.library.path" value="C:\Program Files\Zulu\zulu-8\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Zulu/zulu-8/bin/../jre/bin/server;C:/Program Files/Zulu/zulu-8/bin/../jre/bin;C:/Program Files/Zulu/zulu-8/bin/../jre/lib/amd64;C:\Program Files\Zulu\zulu-8\bin\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\SSAFY\tool\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\SSAFY\AppData\Local\Microsoft\WindowsApps;;C:\Users\SSAFY\AppData\Local\Programs\Microsoft VS Code\bin;C:\SSAFY\spring-tool-suite-3.9.14.RELEASE-e4.17.0-win32-x86_64\sts-bundle\sts-3.9.14.RELEASE;;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\SSAFY"/>
+    <property name="user.timezone" value="Asia/Seoul"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="SSAFY"/>
+    <property name="java.class.path" value="C:\SSAFY\spring-tool-suite-3.9.14.RELEASE-e4.17.0-win32-x86_64\sts-bundle\sts-3.9.14.RELEASE\plugins\org.eclipse.m2e.maven.runtime_1.16.0.20200610-1735\jars\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Zulu\zulu-8\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install -Dstyle.color=always"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="ko"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_192"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Zulu\zulu-8\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Zulu\zulu-8\jre\lib\resources.jar;C:\Program Files\Zulu\zulu-8\jre\lib\rt.jar;C:\Program Files\Zulu\zulu-8\jre\lib\sunrsasign.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jsse.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jce.jar;C:\Program Files\Zulu\zulu-8\jre\lib\charsets.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jfr.jar;C:\Program Files\Zulu\zulu-8\jre\classes"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="maven.home" value="C:\SSAFY\work-web\BookMVC\EMBEDDED"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.ssafy.bookproject.MemberDaoTest" name="registTest" time="0.298">
+    <error message="
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+### The error may exist in file [C:\SSAFY\work-web\BookMVC\target\classes\dao\member.xml]
+### The error may involve com.ssafy.bookproject.member.model.dao.MemberDao.regist-Inline
+### The error occurred while setting parameters
+### SQL: insert into members(id, password, name)   values (?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+; Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;" type="org.springframework.dao.DuplicateKeyException">org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+### The error may exist in file [C:\SSAFY\work-web\BookMVC\target\classes\dao\member.xml]
+### The error may involve com.ssafy.bookproject.member.model.dao.MemberDao.regist-Inline
+### The error occurred while setting parameters
+### SQL: insert into members(id, password, name)   values (?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+; Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:91)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy42.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy44.regist(Unknown Source)
+	at com.ssafy.bookproject.MemberDaoTest.registTest(MemberDaoTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy46.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 45 more
+</error>
+    <system-out>DEBUG: org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.ssafy.bookproject.MemberDaoTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+DEBUG: org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@27a5f880 declaringClass = &apos;com.ssafy.bookproject.UnitTestConfig&apos;, classes = &apos;{}&apos;, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, inheritLocations = true, initializers = &apos;{}&apos;, inheritInitializers = true, name = [null], contextLoaderClass = &apos;org.springframework.test.context.ContextLoader&apos;].
+DEBUG: org.springframework.test.context.support.ActiveProfilesUtils - Could not find an &apos;annotation declaring class&apos; for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.context.support.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [com.ssafy.bookproject.MemberDaoTest]: using defaults.
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c18298f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@31f924f5, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5579bb86, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5204062d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4fcd19b3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@376b4233, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2fd66ad3, org.springframework.test.context.event.EventPublishingTestExecutionListener@5d11346a]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@4b53f538 testClass = MemberDaoTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ssafy.bookproject.MemberDaoTest]
+DEBUG: org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@4b53f538 testClass = MemberDaoTest, testInstance = com.ssafy.bookproject.MemberDaoTest@43d7741f, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[&apos;org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents&apos; -&gt; false]]].
+DEBUG: org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]].
+DEBUG: org.springframework.test.context.support.AbstractGenericContextLoader - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]].
+DEBUG: org.apache.ibatis.logging.LogFactory - Logging initialized using &apos;class org.apache.ibatis.logging.slf4j.Slf4jImpl&apos; adapter.
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\SSAFY\work-web\BookMVC\target\classes\com\ssafy\bookproject\book\model\dao\BookDao.class]
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\SSAFY\work-web\BookMVC\target\classes\com\ssafy\bookproject\member\model\dao\MemberDao.class]
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name &apos;bookDao&apos; and &apos;com.ssafy.bookproject.book.model.dao.BookDao&apos; mapperInterface
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name &apos;bookDao&apos;.
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name &apos;memberDao&apos; and &apos;com.ssafy.bookproject.member.model.dao.MemberDao&apos; mapperInterface
+DEBUG: org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name &apos;memberDao&apos;.
+DEBUG: _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.b.HomeController:
+	{GET [/]}: home(Locale,Model)
+DEBUG: _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.b.b.c.BookController:
+	{GET [/book/removeBook]}: removeBook(String)
+	{POST [/book/insertBook]}: insertBook(Book)
+	{GET [/book/insertBook]}: insertBook()
+	{GET [/book/searchBook]}: searchBook(String,Model)
+	{GET [/book/updateBook]}: updateBook(String,Model)
+	{POST [/book/updateBook]}: updateBook(Book)
+	{GET [/book/listBook]}: listBook(Model,PageBean)
+DEBUG: _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.b.m.c.MemberController:
+	{POST [/member/login]}: login(String,String,HttpSession)
+	{GET [/member/login]}: login()
+	{GET [/member/logout]}: logout(HttpSession)
+DEBUG: _org.springframework.web.servlet.HandlerMapping.Mappings - &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos; {}
+DEBUG: _org.springframework.web.servlet.HandlerMapping.Mappings - &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos; {/resources/**=ResourceHttpRequestHandler [classpath [resources/]]}
+DEBUG: org.mybatis.spring.SqlSessionFactoryBean - Property &apos;configuration&apos; or &apos;configLocation&apos; not specified, using default MyBatis Configuration
+DEBUG: org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: &apos;file [C:\SSAFY\work-web\BookMVC\target\classes\dao\member.xml]&apos;
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Storing ApplicationContext [1558021762] in cache under key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [1558021762] from cache with key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@4b53f538 testClass = MemberDaoTest, testInstance = com.ssafy.bookproject.MemberDaoTest@43d7741f, testMethod = registTest@MemberDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[&apos;org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents&apos; -&gt; false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [1558021762] from cache with key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [1558021762] from cache with key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1]
+DEBUG: org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG: org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c6357f9] was not registered for synchronization because synchronization is not active
+DEBUG: org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+DEBUG: org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:mysql://127.0.0.1:3306/ssafydb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8]
+DEBUG: org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3773862a] will not be managed by Spring
+DEBUG: com.ssafy.bookproject.member.model.dao.MemberDao.regist - ==&gt;  Preparing: insert into members(id, password, name) values (?, ?, ?)
+DEBUG: com.ssafy.bookproject.member.model.dao.MemberDao.regist - ==&gt; Parameters: admin(String), admin(String), ������(String)
+DEBUG: org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c6357f9]
+DEBUG: org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.springframework.jdbc.datasource.SimpleDriverDataSource@5aa6202e]
+DEBUG: org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+DEBUG: org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:mysql://127.0.0.1:3306/ssafydb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8]
+DEBUG: org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for &apos;MySQL&apos; found
+DEBUG: org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.springframework.jdbc.datasource.SimpleDriverDataSource@5aa6202e]: database product name is &apos;MySQL&apos;
+DEBUG: org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state &apos;23000&apos;, error code &apos;1062&apos;, message [Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;] for task [
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+### The error may exist in file [C:\SSAFY\work-web\BookMVC\target\classes\dao\member.xml]
+### The error may involve com.ssafy.bookproject.member.model.dao.MemberDao.regist-Inline
+### The error occurred while setting parameters
+### SQL: insert into members(id, password, name)   values (?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+]
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [1558021762] from cache with key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1]
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [1558021762] from cache with key [[MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@756cf158 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1]
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - After test method: context [DefaultTestContext@4b53f538 testClass = MemberDaoTest, testInstance = com.ssafy.bookproject.MemberDaoTest@43d7741f, testMethod = registTest@MemberDaoTest, testException = org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+### The error may exist in file [C:\SSAFY\work-web\BookMVC\target\classes\dao\member.xml]
+### The error may involve com.ssafy.bookproject.member.model.dao.MemberDao.regist-Inline
+### The error occurred while setting parameters
+### SQL: insert into members(id, password, name)   values (?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;
+; Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;admin&apos; for key &apos;members.PRIMARY&apos;, mergedContextConfiguration = [MergedContextConfiguration@134593bf testClass = MemberDaoTest, locations = &apos;{file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml, file:src/main/webapp/WEB-INF/spring/root-context.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[&apos;org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents&apos; -&gt; false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+</system-out>
+  </testcase>
+  <testcase classname="com.ssafy.bookproject.MemberDaoTest" name="searchTest" time="0.025"/>
+  <testcase classname="com.ssafy.bookproject.MemberDaoTest" name="sessionTest" time="0.001"/>
+  <testcase classname="com.ssafy.bookproject.MemberDaoTest" name="daoTest" time="0.001"/>
+</testsuite>
