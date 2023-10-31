@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 Dao의 패키지명을 포한한 인터페이스 명과 동일하게 선언해야 mybatis-spring이 Dao에 대한 
+	구현체를 자동으로 생성한다. -->
+<mapper namespace="com.ssafy.empproject.emp.model.dao.EmployeeDao">
+
+	<!-- ResultMap - column명과 DTO의 속성명이 다를 때 mapping하기 위해서 resultMap을 작성 - join시 
+		mapping 하기 위해서 선언 -->
+	<resultMap type="JobHistory" id="historyMap">
+		<!-- Primary key 인 경우 id태그로 매핑한다. 주의점 : pk가 아닌데 id태그로 처리시 여러개의 데이터가 추출돼도 
+			1개만 추출된다. -->
+		<id column="employee_id" property="empno" />
+		<id column="sdate" property="sdate" />
+
+		<!-- 일반 컬럼은 RESULT 태그로 매핑한다. -->
+		<result column="edate" property="edate" />
+		<result column="job_id" property="job" />
+		<result column="department_id" property="deptno" />
+	</resultMap>
+
+	<resultMap type="Employee" id="empMap">
+		<id column="empno" property="empno" />
+		<result column="name" property="name" />
+		<result column="email" property="email" />
+		<result column="hire_date" property="hireDate" />
+		<result column="job" property="job" />
+		<result column="salary" property="salary" />
+		<result column="deptno" property="deptno" />
+		
+		<!-- 
+			join 설정
+			1:1	 association 태그로 설정
+			1:N  N쪽을 collection 태그로 설정 
+			<collection property="Master DTO에 선언한 N개의 속성 이름" ofType="N의 타입" resultMap="N을 위한 resultMap id"/>
+			
+		 -->
+		 
+		 <collection property="history" ofType="JobHistory" resultMap="historyMap"/>
+	</resultMap>
+
+	<select id="search" parameterType="int" resultMap="empMap">
+		select employee_id, empno, name, email
+			, date_format(hire_date, '%y-%m-%d') as hire_date
+			, salary, job, deptno
+			, date_format(start_date, '%y-%m-%d') as sdate
+			, date_format(end_date, '%y-%m-%d') as edate
+			, job_id, department_id
+		from job_history
+		right join (	select empno,
+						name, email, hire_date, salary, job, deptno
+						from emps
+						where
+						empno = #{empno}
+					) e
+		on empno = employee_id
+
+	
+	</select>
+
+	<!-- 자주 사용하는 쿼리를 등록해서 필요한 곳에서 include해서 재사용할 수 있다. -->
+	<sql id='searchCon'>
+		<if test=" word!=null and word!='' ">
+			<choose>
+				<when test="key == 'empno'">
+					empno = #{word}
+				</when>
+				<when test="key == 'name'">
+					name like concat('%', #{word}, '%')
+				</when>
+				<when test="key == 'salary'">
+					salary >= #{word}
+				</when>
+				<when test="key =='deptno'">
+					deptno = #{word}
+				</when>
+			</choose>
+		</if>
+	</sql>
+	<select id="searchAll" parameterType="PageBean"
+		resultType="Employee">
+		select empno, name, email, hire_date as hireDate
+		from emps
+		<where> <!-- 조건이 있을때만 where가 자동으로 붙는다. -->
+			<include refid="searchCon"></include>
+		</where>
+		limit #{start}, #{interval}
+	</select>
+
+	<select id="totalCount" parameterType="PageBean"
+		resultType="int">
+		select count(*)
+		from emps
+		<where>
+			<include refid="searchCon"></include>
+
+		</where>
+
+	</select>
+
+	<insert id="regist" parameterType="Employee">
+		insert into emps (empno, name,
+		email, hire_date, salary, job, deptno)
+		values
+		(#{empno},#{name},#{email},#{hireDate},#{salary},#{job},#{deptno})
+	</insert>
+
+	<update id="update" parameterType="Employee">
+		update emps set name=#{name},
+		email=#{email}, hire_date=#{hireDate}, salary = #{salary}, job=#{job},
+		deptno=#{deptno}
+		where empno=#{empno}
+	</update>
+	<delete id="remove" parameterType="int">
+		delete from emps
+		where
+		empno=#{empno}
+	</delete>
+</mapper>    

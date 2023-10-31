@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" 	class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/ssafydb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"/>
+		<property name="username" value="ssafy"/>
+		<property name="password" value="ssafy"/>
+	</bean> 	
+	
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		
+		<property name="dataSource" ref="dataSource"/>
+		
+		
+		<!-- resultType과 parameterType에서 사용하는 타입들을 패키지명 포함한 클래스명으로 사용하지 않고 클래스명으로만 접근하도록 패키지를 등록 -->
+		<property name="typeAliasesPackage" value="com.ssafy.bookproject.*.model.dto"/>
+		
+		
+		<!-- sql을 작성한 xml(Mapper)의 위치를 등록  
+			 주의점 :	resources폴더 하위에 배치하면 되지만 log4j.xml 과 같이 두면 
+			 		log4j.xml을 Mapper로 인식하기 때문에 error 발생한다.
+			 		log4j.xml와 다른곳에 배치해야 한다. 
+			 		일반적으로 dao폴더를 만든후 그안에 넣어준다.
+														
+		 -->
+		<property name="mapperLocations" value='classpath:dao/*.xml'/>
+	</bean>
+	
+	<!-- 여기까지만 작성하면 DaoImpl을 만들어줘야함 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+	<!-- 
+		DAO    - 네임스페이스를 통해 찾는다.
+		Mapper - NameSpace : 패키지.인터페이스 이름
+			   - id : 메서드 이름 
+	
+	 -->
+	 
+	 	<!-- mybatis-spring이 DAO 인터페이스 구현부를 자동으로 생성하기 위래 
+		 DAO인터페이스가 있는 pcakage를 지정 
+	-->
+	 <mybatis-spring:scan base-package="com.ssafy.bookproject.*.model.dao"/>
+	 
+</beans>

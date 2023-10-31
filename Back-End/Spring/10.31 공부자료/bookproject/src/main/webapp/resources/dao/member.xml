@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace는 Dao의  패키지명을 포한한 인터페이스 명과 동일하게 선언해야
+	  mybatis-spring이  Dao에 대한 구현체를 자동으로 생성한다. 
+-->    
+<mapper		namespace="com.ssafy.bookproject.member.model.dao.MemberDao">
+	
+	<select id="search"		parameterType="String"		resultType="Member">
+		select * 
+		from 	members
+		where   id=#{id}
+	</select>
+	
+	<insert id="regist"		parameterType="Member">
+		insert into members(id, password, name) 
+		values(#{id},#{password},#{name})
+	</insert>
+	<update id="update"		parameterType="Member">
+		update members set  password=#{password}, name = #{name} 
+		where id = #{id}
+	</update>
+	<delete id="remove"		parameterType="String">
+		delete from members 
+		where id = #{id}
+	</delete>
+</mapper>    
