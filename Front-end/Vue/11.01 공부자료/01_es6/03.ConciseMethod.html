@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 
+        객체에서 함수를 기존에 선언하는 방법 
+        
+        concise method 
+        - 간결한 메서드 선언 방법
+        - 객체에서 메서드 선언시 간결하게 선언이 가능
+        - 메서드이름(){} 의 형태
+    */
+      // 기존 방식
+      const user = {
+        id: "ssafy",
+        age: 10,
+        name: "김싸피",
+        info: function () {
+          console.log("user info:", this.id, this.age, this.name);
+        },
+      };
+
+      user.info();
+
+      // concise method 방식
+
+      const user2 = {
+        id: "ssafy",
+        age: 10,
+        name: "김싸피",
+        info() {
+          console.log("user info:", this.id, this.age, this.name);
+        },
+      };
+
+      user2.info();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        기존에 객체의 속성을 표현하는 방법
+        {속성 : 값   }
+        {속성 : 변수 }
+      */
+      let id = "ssafy";
+      let name = "김싸피";
+      let age = 10;
+
+      let user = {
+        id: id,
+        name: name,
+        age: age,
+        info() {
+          console.log("user info:", this.id, this.age, this.name);
+        },
+      };
+
+      user.info();
+
+      /* property shorthand 
+        - 객체의 속성명과 자바스크립트의 변수명이 같은 경우
+        - 속성명을 생략하고 변수명만으로 속성을 표현할 수 있다.
+      */
+
+      let user2 = {
+        id,
+        name,
+        age,
+        info() {
+          console.log("user info:", this.id, this.age, this.name);
+        },
+      };
+
+      user2.info();
+    </script>
+  </body>
+</html>

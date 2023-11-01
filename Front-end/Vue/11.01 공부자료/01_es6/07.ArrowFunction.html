@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        익명함수
+        function(){}
+      */
+
+      const func1 = function () {
+        console.log("익명함수");
+      };
+
+      func1();
+
+      /*
+        Arrow function
+        - 함수 축약형, lambda 자바스크립트 버전 
+        형식]
+        (인자) => {} // 인자가 없거나 2개이상일때
+        인자 => { } // 인자가 1개 일때
+      */
+      const func2 = () => console.log("Arrow function");
+      func2();
+
+      const arr = [5, 2, 7, 1, 9, 10];
+      arr.sort((num1, num2) => {
+        return num1 - num2;
+      }); // 오름차순
+
+      console.log(`오름차순 ${arr}`);
+
+      arr.sort((num1, num2) => {
+        return num2 - num1;
+      }); // 내림차순
+
+      console.log(`내림차순 ${arr}`);
+      const arr2 = arr.filter((num) => {
+        return num % 2 === 0;
+      });
+      console.log(arr2);
+    </script>
+  </body>
+</html>

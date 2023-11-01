@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user1 = { id: "ssafy1" };
+      const user2 = { id: "ssafy2" };
+
+      console.log(user1);
+      console.log(user2);
+      const users = [user1, user2];
+      // console.log로 객체를 출력시 객체의 현재 상태를 출력하지 않는다.
+      // 화면에 표시되기전 최종 객체의 상태를 출력
+      //console.log(users);
+      for (let u of users) {
+        console.log(u.id);
+      }
+
+      // 객체의 참조값이 전달
+      const copy = users;
+      user1.id = "ssafy10";
+      console.log(copy);
+      /*
+        Spread Syntax
+          - 객체의 내용을 복사한 새로운 객체를 생성 
+          - 형식] [...변수명]
+      */
+      const copy2 = [...users];
+      console.log("users==copy1", users == copy);
+      console.log("users==copy2", users == copy2);
+      console.log("copy2 :", copy2);
+
+      users.push({ id: "ssafy11" });
+      console.log("-------------- users에 추가후 --------------");
+      console.log("copy : ", copy);
+      console.log("copy2 :", copy2);
+    </script>
+  </body>
+</html>
