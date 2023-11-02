@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        // composition API 이용하기 1. setup()이용하기 2. <script setup> 이용하기
+        // setup() 이용시  return 하지 않으면 정상적으로 동작하지 않음, return + mount  자주 실수하는 것 중 하나임
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>

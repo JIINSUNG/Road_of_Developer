@@ -1,0 +1,49 @@
+<!-- form-input-bindings.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ inputText1 }}</p>
+      <input :value="inputText1" @input="onInput" />
+      <!-- 데이터 변경시마다 onInput 이벤트 실행 -->
+      <!-- v-bind는 단방향이며 v-on을 붙여 이벤트를 붙여 양방향 처리가 가능해진다-->
+      <!-- 변경이 발생할때마다 바로바로 이벤트가 실행되는 단점, 단 반영은 빠르다-->
+
+      <p>{{ inputText2 }}</p>
+      <input v-model="inputText2" />
+      <!-- v-model은 input, textarea, select 태그에만 사용가능, value 값을 사용하기 때문 -->
+      <!-- 한글 입력시 각 글자하나하나가 완성이 된후 처리되는 단점이 있음 (즉시 처리 방식이 아님) -->
+      <!-- suggestion이 필요할때는 v-on 형식을 쓰는게 낫다, 이외 상황에선 v-model을 써도 충분! -->
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const inputText1 = ref(""); // 반응형데이터
+          const inputText2 = ref("");
+          const onInput = function (event) {
+            inputText1.value = event.currentTarget.value;
+          };
+
+          return {
+            inputText1,
+            onInput,
+            inputText2,
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
